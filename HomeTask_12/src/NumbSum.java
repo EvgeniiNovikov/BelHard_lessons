@@ -3,21 +3,21 @@
  */
 
 
-import java.util.Random;
+
 
 public class NumbSum {
     public static void main(String[] args) {
-        Random rand = new Random();
-        int n = rand.nextInt(100);
-        System.out.println("Случайное число: " + n);
-        int sum = 0;
-        for (int i = 1; i <= n ; i++) {
-            if (i % 3 == 0){
-                System.out.println(i);
-                sum += i;
-            }
 
-        }
+        int n = 15;
+        int count = 0;
+        int sum = 0;
+        System.out.println("Наше число: " + n);
+            for (int i = 0; count <= n; i++) {
+                if (i % 3 == 0){
+                    count++;
+                    sum += i;
+                }
+            }
         System.out.println("Сумма чисел кратных трем: " + sum);
     }
 }
