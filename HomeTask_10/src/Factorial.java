@@ -15,9 +15,5 @@ public class Factorial {
         }
         while (count <= numb);
         System.out.println(fact);
-        /*for (int i = 1; i <= numb ; i++) {
-            fact *= i;
-        }
-        System.out.println(fact);*/
     }
 }
