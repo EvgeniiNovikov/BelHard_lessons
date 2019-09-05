@@ -25,6 +25,5 @@ public class ArrayNumbs {
         }
         System.out.println();
         System.out.println("Наибольшее: " + maxNumb);
-
     }
 }
