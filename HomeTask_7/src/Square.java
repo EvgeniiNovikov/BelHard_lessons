@@ -10,9 +10,9 @@ public class Square {
         double sideC = (sideA * sideA) + (sideB * sideB);
         double r = 10;
         if (Math.sqrt(sideC) >= r){
-            System.out.println("Отверстие нельзя закрыть");
+            System.out.println("Отверстие нельзя закрыть.");
         } else {
-            System.out.println("Отверстие закрыто");
+            System.out.println("Отверстие закрыто.");
         }
     }
 }
