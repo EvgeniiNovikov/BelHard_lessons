@@ -8,7 +8,7 @@ import java.util.Random;
 public class RandomRUB {
     public static void main(String[] args) {
         Random rand = new Random();
-        int x = rand.nextInt(10000);//ограничил 10000
+        int x = rand.nextInt(10000);
         int x1 = x % 100 / 10;
 
         if (x1 == 1) {
