@@ -5,11 +5,11 @@
 
 public class Square {
     public static void main(String[] args) {
-        int a = 4;
-        int b = 12;
-        double r = 4.5;
-        double PI = 3.14;
-        if (a*b > PI*r*r){
+        double sideA = 1;
+        double sideB = 100;
+        double sideC = (sideA * sideA) + (sideB * sideB);
+        double r = 10;
+        if (Math.sqrt(sideC) >= r){
             System.out.println("Отверстие нельзя закрыть");
         } else {
             System.out.println("Отверстие закрыто");
