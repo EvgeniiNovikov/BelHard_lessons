@@ -3,20 +3,23 @@
     без остатка только на 1 и на себя.
  */
 
-//намудрил тут блин))
 
 public class SimpleNumber {
     public static void main(String[] args) {
-        int number = (int) (Math.random() * 100);
-        System.out.println(number);
-        if (number == 2 || number == 3 || number == 5 || number == 7){
-            System.out.println("Число " + number + " является простым");
-        } else if (number == 1){
-            System.out.println("У числа " + number + " только один делитель");
-        } else if (number % 2 == 0 || number % 3 == 0 || number % 5 == 0 || number % 7 == 0){
-            System.out.println("Число " + number + " является составным");
+        int number = (int) (Math.random() * 150);
+        System.out.println("Наше число: " + number);
+
+        boolean isSimple = true;
+        for (int i = 2; i < number; i++){
+            if (number % i == 0){
+                isSimple = false;
+                break;
+            }
+        }
+        if (isSimple){
+            System.out.println("Это простое число");
         } else {
-            System.out.println("Число " + number + " является простым");
+            System.out.println("Это составное число");
         }
     }
 }
