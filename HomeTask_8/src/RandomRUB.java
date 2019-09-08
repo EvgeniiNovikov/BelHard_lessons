@@ -11,7 +11,33 @@ public class RandomRUB {
         int x = rand.nextInt(10000);
         int x1 = x % 100 / 10;
 
-        if (x1 == 1) {
+        if (x1 == 1){
+            System.out.println(x + " Рублей");
+        } else {
+            int num = x % 10;
+            if (num == 0 || (num > 4 && num < 10)){
+                System.out.println(x + " Рублей");
+            } else if (num == 1){
+                System.out.println(x + " Рубль");
+            } else {
+                System.out.println(x + " Рубля");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /*if (x1 == 1) {
             System.out.println(x + " Рублей");
         } else {
             int num = x % 10;
@@ -36,7 +62,7 @@ public class RandomRUB {
                     break;
                 }
             }
-        }
+        }*/
     }
 }
 
