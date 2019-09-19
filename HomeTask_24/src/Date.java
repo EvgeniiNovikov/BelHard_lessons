@@ -21,7 +21,7 @@ public class Date {
             this.minutes = minutes;
             this.seconds = seconds;
         } else {
-            System.out.println("Некорректно введены данные. Нужно: часы от 0 - 24, минуты и секунды от 0 до 60");
+            System.out.println("Некорректно введены данные. Нужно ввести: часы от 0 - 24, минуты и секунды от 0 до 60");
         }
     }
 
