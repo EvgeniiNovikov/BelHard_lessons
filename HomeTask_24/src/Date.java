@@ -16,9 +16,13 @@ public class Date {
     }
 
     Date(int hours, int minutes, int seconds) {
-        this.hours = hours;
-        this.minutes = minutes;
-        this.seconds = seconds;
+        if ((hours >= 0 && hours <= 24) && (minutes >= 0 && minutes <= 60) && (seconds >= 0  && seconds <= 60)){
+            this.hours = hours;
+            this.minutes = minutes;
+            this.seconds = seconds;
+        } else {
+            System.out.println("Некорректно введены данные. Нужно: часы от 0 - 24, минуты и секунды от 0 до 60");
+        }
     }
 
 
