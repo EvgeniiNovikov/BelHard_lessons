@@ -29,12 +29,23 @@ public class MyService
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+       final int prime = 17;
+       int result = 1;
+       result = prime * result + ((this.getNameVersion() == null) ? 0 : this.getNameVersion().hashCode());
+       result = (int) (prime * result + this.getVersion());
+       return result;
     }
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if(obj == null || this.getClass() != obj.getClass()) {
+            return false;
+        }
+        if (obj == this){
+            return true;
+        }
+        MyService m = (MyService) obj;
+        return (this.getVersion() == m.getVersion());
     }
 
     private void thisClassInfo(){
