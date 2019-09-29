@@ -10,7 +10,7 @@ public class TestReader {
     public static void main(String[] args) throws IOException {
         FileReader fileReader = null;
         try {
-            fileReader = new FileReader("G:\\BelHard\\Lessons\\BelHard_lessons\\HomeTask_33\\src\\test.txt");
+            fileReader = new FileReader("test.txt");
             int res = fileReader.read();
             int count = 0;
             while (res != -1) {
