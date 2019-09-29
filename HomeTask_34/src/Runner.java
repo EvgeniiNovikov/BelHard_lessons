@@ -19,7 +19,7 @@ public class Runner {
         List<Integer> list = new ArrayList<>();
 
         try {
-            reader = new BufferedReader(new FileReader("G:\\BelHard\\Lessons\\BelHard_lessons\\HomeTask_34\\src\\numbersTextTest.txt"));
+            reader = new BufferedReader(new FileReader("numbersTextTest.txt"));
             text = reader.readLine();
             pattern = Pattern.compile("\\d+");
             matcher = pattern.matcher(text);
