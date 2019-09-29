@@ -5,7 +5,8 @@ public class Runner
         atm.addBanknote_20(100);
         atm.addBanknote_50(100);
         atm.addBanknote_100(100);
-        atm.giveMeTheMoney(8770);
+        atm.giveMeTheMoney(110);
+
 
     }
 }

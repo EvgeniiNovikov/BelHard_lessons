@@ -30,12 +30,12 @@ public class ATM
     }
 
     public int getAtmSum() {
-        return atmSum;
+        return this.atmSum;
     }
 
 
     public int getBanknote_20() {
-        return banknote_20;
+        return this.banknote_20;
     }
 
     public void setBanknote_20(int banknote_20) {
@@ -43,7 +43,7 @@ public class ATM
     }
 
     public int getBanknote_50() {
-        return banknote_50;
+        return this.banknote_50;
     }
 
     public void setBanknote_50(int banknote_50) {
@@ -51,7 +51,7 @@ public class ATM
     }
 
     public int getBanknote_100() {
-        return banknote_100;
+        return this.banknote_100;
     }
 
     public void setBanknote_100(int banknote_100) {
@@ -60,8 +60,8 @@ public class ATM
 
     public void addBanknote_20(int banknote){
         if (banknote >= 0){
-            banknote_20 = banknote;
-            atmSum += banknote_20 * 20;
+            this.banknote_20 = banknote;
+            this.atmSum += this.banknote_20 * 20;
         } else {
             System.out.println("Нужно ввести от 0 и выше");
         }
@@ -70,8 +70,8 @@ public class ATM
 
     public void addBanknote_50(int banknote) {
         if (banknote >= 0) {
-            banknote_50 = banknote;
-            atmSum += banknote_50 * 50;
+            this.banknote_50 = banknote;
+            this.atmSum += this.banknote_50 * 50;
         } else {
             System.out.println("Нужно ввести от 0 и выше");
         }
@@ -79,8 +79,8 @@ public class ATM
 
     public void addBanknote_100(int banknote) {
         if (banknote >= 0) {
-            banknote_100 = banknote;
-            atmSum += banknote_100 * 100;
+            this.banknote_100 = banknote;
+            this.atmSum += this.banknote_100 * 100;
         } else {
             System.out.println("Нужно ввести от 0 и выше");
         }
@@ -88,20 +88,32 @@ public class ATM
 
     public boolean giveMeTheMoney(int sum) {
         boolean atmHaveMoney = true;
-        if (sum < atmSum){
-            System.out.println("Выдаю банкноты на сумму: " + sum);
-            int b = sum/100;
-            System.out.println("Выдано банкнот по 100: " + b);
-            atmSum -= b * 100;
-            int c = (sum - (b * 100)) / 50;
-            System.out.println("Выдано банкнот по 50: " + c);
-            atmSum -=  c * 50;
-            int d = (sum - (b * 100) - (c * 50)) / 20;
-            System.out.println("Выдано банкнот по 20: " + d);
-            atmSum -= d * 20;
+        if  (sum % 20 == 0 || sum % 50 == 0) {
+            if (sum < this.atmSum) {
+                System.out.println("Выдаю банкноты на сумму: " + sum);
+                int b = sum / 100;
+                System.out.println("Выдано банкнот по 100: " + b);
+                this.atmSum -= b * 100;
+                int c = (sum - (b * 100)) / 50;
+                System.out.println("Выдано банкнот по 50: " + c);
+                this.atmSum -= c * 50;
+                int d = (sum - (b * 100) - (c * 50)) / 20;
+                System.out.println("Выдано банкнот по 20: " + d);
+                this.atmSum -= d * 20;
+                sum = sum - (b * 100 + c * 50 + d * 20);
+                if (sum == 0) {
+                    System.out.println("Выдано банкнот по 100: " + b);
+                    System.out.println("Выдано банкнот по 50: " + c);
+                    System.out.println("Выдано банкнот по 20: " + d);
+                } else {
+                    System.out.println("Не могу выдать такие купюры " + sum);
+                }
+            } else {
+                atmHaveMoney = false;
+                System.out.println("В ATM закончились средства!");
+            }
         } else {
-            atmHaveMoney = false;
-            System.out.println("В ATM закончились средства!");
+            System.out.println("Нужно ввести сумму кратную 20 или 50");
         }
         return atmHaveMoney;
     }
