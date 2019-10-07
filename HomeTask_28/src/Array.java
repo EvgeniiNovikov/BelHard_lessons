@@ -3,9 +3,9 @@
 //массива по индексу.
 
 public class Array {
-    private Object[] array;
+    private <T>[] array;
 
-    public Array(Object[] array) {
+    public Array(<T>[] array) {
         this.array = array;
     }
 
