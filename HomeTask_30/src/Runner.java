@@ -2,10 +2,7 @@
 //Создать коллекцию, наполнить ее случайными числами. Удалить повторяющиеся
 //числа.
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class Runner {
     public static void main(String[] args) {
@@ -28,13 +25,5 @@ public class Runner {
         }
 
         System.out.println(list);
-
-//       "Или можно так: "
-//        HashSet<Integer> set = new HashSet<>(list); //берем лист после заполнения случ. числами
-//
-//        for (Integer x : set) {
-//            System.out.print(x + " ");
-//        }
-
     }
 }
